@@ -1,13 +1,22 @@
-def array_sum(nums, idx):
-    if idx > len(nums) - 1:
-        return f"Index is too high, list hasn't got so many elements!"
-    if idx == len(nums)-1:
-        return nums[idx]
-    return nums[idx] + array_sum(nums, idx+1)
+def array_sum(idx: int, nums: list, result: int):
+    if idx >= len(nums):
+        print(result)
+        return
+    result += nums[idx]
+    array_sum(idx+1, nums, result)
+sequence = [int(n) for n in input().split()]
+array_sum(0, sequence, 0)
 
 
-nums = [int(num) for num in input().split(" ")]
-print(array_sum(nums, 0))
+# # SECOND WAY:
+# def array_sum(nums, idx):
+#     if idx > len(nums) - 1:
+#         return f"Index is too high, list hasn't got so many elements!"
+#     if idx == len(nums)-1:
+#         return nums[idx]
+#     return nums[idx] + array_sum(nums, idx+1)
+# nums = [int(num) for num in input().split(" ")]
+# print(array_sum(nums, 0))
 
 
 # INPUT:
