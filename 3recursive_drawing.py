@@ -1,16 +1,58 @@
-def draw_symmetric_figure(n):
+def draw_symmetric_figure(n: int):
     if n == 0:
-        # tova ti razpoluvqva broq iteracii
-        # i ednovremenno
         return
+    print('*'*n)
+    draw_symmetric_figure(n-1)
+    print('#'*n)  # BACKTRACKING
+draw_symmetric_figure(int(input()))
 
-    print(n * '*')
-    draw_symmetric_figure(n - 1)
-    print(n * '#')
+
+# # INPUT1:
+# 2
+# # OUTPUT1:
+# **
+# *
+# #
+# ##
+
+# # INPUT2:
+# 5
+# # OUTPUT2:
+# *****
+# ****
+# ***
+# **
+# *
+# #
+# ##
+# ###
+# ####
+# #####
 
 
-n = int(input())
-draw_symmetric_figure(n)
+# # NOT WORKING IDEA:
+# def draw_symmetric_figure(n: int):
+#     if n == 0:
+#         continue  # continue DOESN'T work here, shame
+#     if n < 0:
+#         print('#' * n)
+#     print('*'*n)
+#     draw_symmetric_figure(n-1)
+# draw_symmetric_figure(int(input()))
+
+
+
+# def draw_symmetric_figure(n):
+#     if n == 0:
+#         # tova ti razpoluvqva broq iteracii
+#         # i ednovremenno
+#         return
+#
+#     print(n * '*')
+#     draw_symmetric_figure(n - 1)
+#     print(n * '#')
+# n = int(input())
+# draw_symmetric_figure(n)
 
 
 # # NOT WORKING
